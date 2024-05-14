@@ -2,7 +2,7 @@
 #include "train.h"
 Train::Train() {
   first = nullptr;
-  cntO = 0;
+  countOp = 0;
 }
 
 Train::~Train() {
@@ -40,7 +40,7 @@ int Train::getLength() {
   curnt->light = true;
   while (true) {
     curnt = curnt->next;
-    cntO++;
+    countOp++;
     len++;
     if (curnt->light == true) {
       curnt->light = false;
@@ -48,7 +48,7 @@ int Train::getLength() {
       len = 0;
       for (int i = 0; i < maxlen; i++) {
         curnt = curnt->prev;
-        cntO++;
+        countOp++;
       }
       if (curnt->light == false)
         return maxlen;
